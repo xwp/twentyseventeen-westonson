@@ -132,9 +132,11 @@ body.page:not(.twentyseventeen-front-page) .entry-title::after {
 	}
 }
 
-.page-one-column .entry-header {
-	margin-left  : -80px;
-	margin-right : -80px;
+@media screen and (min-width: 48em) {
+	.page.page-one-column .entry-header {
+		margin-left  : -80px;
+		margin-right : -80px;
+	}
 }
 
 .entry-content .alignwide {
@@ -428,4 +430,28 @@ body.error500 .page-header .page-title::after {
 body.offline .page-content,
 body.error500 .page-content {
 	text-align: center;
+}
+
+/*--------------------------------------------------------------
+## Fancy List Styles
+--------------------------------------------------------------*/
+.entry-content ul {
+	list-style-type: none;
+}
+
+.entry-content ul li {
+	position: relative;
+}
+
+.entry-content ul li::before {
+	border: 1px solid #979797;
+	content: '';
+	display: block;
+	height: 33px;
+	height: 2.063em;
+	left: -2.063em;
+	position: absolute;
+	top: 0;
+	width: 33px;
+	width: 2.063em;
 }
