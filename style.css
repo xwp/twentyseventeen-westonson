@@ -127,9 +127,8 @@ body.page:not(.twentyseventeen-front-page) .entry-title::after {
 ## Page Layout, Alignwide and Alignfull
 --------------------------------------------------------------*/
 @media screen and (min-width: 30em) {
-	.page-one-column .panel-content .wrap {
-		margin-left  : -80px;
-		margin-right : -80px;
+	.page-one-column .panel-content .entry-content {
+		max-width: 740px;
 	}
 }
 
