@@ -76,6 +76,7 @@ body.page:not(.twentyseventeen-front-page) .entry-title::after {
 ## Site Branding
 --------------------------------------------------------------*/
 .site-title {
+	font-weight: 700;
 	letter-spacing: 0.125em;
 }
 
