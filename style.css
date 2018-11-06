@@ -196,6 +196,25 @@ body.page:not(.twentyseventeen-front-page) .entry-title::after {
 	cursor: pointer;
 }
 
+/*
+ * Account for .single-featured-image-header being moved inside .site-content,
+ * so move padding-top from .site-content to the .content-area element.
+ */
+.site-content {
+	padding-top: 0;
+}
+.wrap {
+	padding-top: 2.5em;
+}
+@media screen and (min-width: 48em) {
+	.site-content {
+		padding-top: 0;
+	}
+	.wrap {
+		padding-top: 5.5em;
+	}
+}
+
 /*--------------------------------------------------------------
 ## Page Transitions
 --------------------------------------------------------------*/
