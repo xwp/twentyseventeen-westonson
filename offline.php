@@ -18,7 +18,7 @@ get_header(); ?>
 
 			<section class="error-offline">
 				<header class="page-header">
-					<img class="page-header-image" src="<?php echo esc_url( get_stylesheet_directory_uri() . '/images/offline-image.png'; ?>" alt="A woman&#8217;s hand holding an image of a wi-fi icon outdoors'" />
+					<img class="page-header-image" src="<?php echo esc_url( get_stylesheet_directory_uri() . '/images/offline-image.png'); ?>" alt="A woman&#8217;s hand holding an image of a wi-fi icon outdoors'" />
 					<h1 class="page-title"><?php esc_html_e( 'Oops! It looks like you&#8217;re offline.', 'twentyseventeen-westonson' ); ?></h1>
 				</header><!-- .page-header -->
 
