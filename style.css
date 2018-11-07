@@ -138,6 +138,11 @@ body.page:not(.twentyseventeen-front-page) .entry-title::after {
 		margin-left  : -130px;
 		margin-right : -130px;
 	}
+
+	.entry-content .alignwide {
+		margin-left  : -130px;
+		margin-right : -130px;
+	}
 }
 
 .single-featured-image-header img {
@@ -145,10 +150,6 @@ body.page:not(.twentyseventeen-front-page) .entry-title::after {
 	width: 100vw;
 }
 
-.entry-content .alignwide {
-	margin-left  : -130px;
-	margin-right : -130px;
-}
 .entry-content .alignfull {
 	margin-left  : calc( -100vw / 2 + 100% / 2 );
 	margin-right : calc( -100vw / 2 + 100% / 2 );
@@ -377,19 +378,21 @@ img.circle-image {
 	clear: both;
 }
 
-.inline-div {
-	display: inline-block;
-	margin: 1em 0;
-	position: relative;
-	width: 60%;
-}
+@media screen and (min-width: 30em) {
+	.inline-div {
+		display: inline-block;
+		margin: 1em 0;
+		position: relative;
+		width: 59%;
+	}
 
-.inline-div.right {
-	float: right;
-}
+	.inline-div.right {
+		float: right;
+	}
 
-.inline-div.left {
-	float: left;
+	.inline-div.left {
+		float: left;
+	}
 }
 
 .center-text {
