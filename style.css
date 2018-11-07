@@ -385,6 +385,7 @@ img.circle-image {
 
 .inline-div {
 	display: inline-block;
+	margin: 1em 0;
 	position: relative;
 	width: 55%;
 }
