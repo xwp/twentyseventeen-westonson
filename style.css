@@ -406,6 +406,7 @@ img.circle-image {
 	background-color: #d8d8d8;
 	padding: 2em;
 	position: relative;
+	z-index: 1;
 }
 
 .full-width-background::before,
@@ -417,6 +418,7 @@ img.circle-image {
 	position: absolute;
 	top: 0;
 	width: 100%;
+	z-index: -1;
 }
 
 .full-width-background::before {
@@ -428,7 +430,7 @@ img.circle-image {
 }
 
 /*--------------------------------------------------------------
-## Embeds
+## Embeds helpers
 --------------------------------------------------------------*/
 .center-embed.wp-block-embed {
 	text-align: center;
