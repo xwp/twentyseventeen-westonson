@@ -408,12 +408,15 @@ img.circle-image {
 /*--------------------------------------------------------------
 ## Error and Offline pages
 --------------------------------------------------------------*/
-body.offline .page-header,
-body.error500 .page-header,
-body.error404 .page-header {
-	float: none;
-	text-align: center;
-	width: 100%;
+
+@media screen and (min-width: 48em) {
+	body.offline .page-header,
+	body.error500 .page-header,
+	body.error404 .page-header {
+		float: none;
+		text-align: center;
+		width: 100%;
+	}
 }
 
 body.offline .page-header .page-title,
@@ -422,6 +425,12 @@ body.error404 .page-header .page-title {
 	font-size: 26px;
 	font-size: 1.625rem;
 	letter-spacing: 0.082em;
+}
+
+body.colors-light.offline .page-header .page-title,
+body.colors-light.error500 .page-header .page-title,
+body.colors-light.error404 .page-header .page-title {
+	color: #666;
 }
 
 body.offline .page-header .page-title::after,
