@@ -119,8 +119,9 @@ body.page:not(.twentyseventeen-front-page) .entry-title::after {
 	text-transform: uppercase;
 }
 
-.main-navigation .current-menu-item a,
-.main-navigation .current_page_parent a {
+.main-navigation .menu > .current-menu-item > a,
+.main-navigation .menu > .current_page_ancestor > a,
+.single .main-navigation .menu > .current_page_parent > a {
 	border-bottom-color: #4A90E2;
 }
 
