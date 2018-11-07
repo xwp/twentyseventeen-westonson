@@ -134,15 +134,20 @@ body.page:not(.twentyseventeen-front-page) .entry-title::after {
 	}
 }
 
-@media screen and (min-width: 48em) {
-	.page.page-one-column .entry-header {
-		margin-left  : -130px;
-		margin-right : -130px;
+@media screen and (min-width: 64em) {
+	body:not(.twentyseventeen-front-page) .entry-header {
+		margin-left  : -80px;
+		margin-right : -80px;
 	}
 
-	.entry-content .alignwide {
-		margin-left  : -130px;
-		margin-right : -130px;
+	body.twentyseventeen-front-page .entry-content .alignwide {
+		margin-left: -130px;
+		margin-right: -130px;
+	}
+
+	body:not(.twentyseventeen-front-page) .entry-content .alignwide {
+		margin-left  : -80px;
+		margin-right : -80px;
 	}
 }
 
