@@ -367,9 +367,20 @@ img.circle-image {
 @media screen and (max-width: 48em) {
 	.content-and-media .alignright,
 	.content-and-media .alignleft {
-		display: inline;
-		margin: 0;
+		display: block;
+		float: none;
+		margin: 0 auto 1.5em;
 		text-align: center;
+	}
+
+	.wp-block-column .wp-block-image {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	amp-img {
+		margin-left: auto;
+		margin-right: auto;
 	}
 }
 
@@ -403,9 +414,15 @@ img.circle-image {
 	background-color: #eee;
 	border-top: 1px solid #d8d8d8;
 	border-bottom: 1px solid #d8d8d8;
-	padding: 2em;
+	padding: 2em 0;
 	position: relative;
 	z-index: 1;
+}
+
+@media screen and (min-width: 30em) {
+	.full-width-background {
+		padding: 2em;
+	}
 }
 
 .full-width-background::before,
