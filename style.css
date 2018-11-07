@@ -28,6 +28,7 @@ h5,
 h6 {
 	color: #666666;
 	font-family: 'Rubik', 'Libre Franklin', helvetica, arial, sans-serif;
+	font-weight: 700;
 }
 
 .entry-content {
