@@ -378,7 +378,7 @@ img.circle-image {
 	clear: both;
 }
 
-@media screen and (max-width: 30em) {
+@media screen and (max-width: 48em) {
 	.content-and-media .alignright,
 	.content-and-media .alignleft {
 		display: inline;
@@ -391,7 +391,7 @@ img.circle-image {
 	width: 100%;
 }
 
-@media screen and (min-width: 30em) {
+@media screen and (min-width: 48em) {
 
 	.inline-div {
 		display: inline-block;
