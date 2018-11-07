@@ -398,16 +398,45 @@ img.circle-image {
 	float: left;
 }
 
+.center-text {
+	text-align: center;
+}
+
+.full-width-background {
+	background-color: #d8d8d8;
+	padding: 2em;
+	position: relative;
+}
+
+.full-width-background::before,
+.full-width-background::after {
+	content: '';
+	background-color: #d8d8d8;
+	display: block;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+
+.full-width-background::before {
+	left: -100%;
+}
+
+.full-width-background::after {
+	left: 100%;
+}
+
 /*--------------------------------------------------------------
 ## Embeds
 --------------------------------------------------------------*/
-.center-embed .wp-embed-block {
+.center-embed.wp-block-embed {
 	text-align: center;
 }
 
 .center-tweet .twitter-tweet {
-	margin-left: 0;
-	margin-right: 0;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 /*--------------------------------------------------------------
