@@ -119,10 +119,12 @@ body.page:not(.twentyseventeen-front-page) .entry-title::after {
 	text-transform: uppercase;
 }
 
-.main-navigation .menu > .current-menu-item > a,
-.main-navigation .menu > .current-menu-ancestor > a,
-.single .main-navigation .menu > .current_page_parent > a {
-	border-bottom-color: #4A90E2;
+@media screen and (min-width: 48em) {
+	.main-navigation .menu > .current-menu-item > a,
+	.main-navigation .menu > .current-menu-ancestor > a,
+	.single .main-navigation .menu > .current_page_parent > a {
+		border-bottom-color: #4A90E2;
+	}
 }
 
 /*--------------------------------------------------------------
