@@ -378,7 +378,21 @@ img.circle-image {
 	clear: both;
 }
 
+@media screen and (max-width: 30em) {
+	.content-and-media .alignright,
+	.content-and-media .alignleft {
+		display: inline;
+		margin: 0;
+		text-align: center;
+	}
+}
+
+.inline-div {
+	width: 100%;
+}
+
 @media screen and (min-width: 30em) {
+
 	.inline-div {
 		display: inline-block;
 		margin: 1em 0;
