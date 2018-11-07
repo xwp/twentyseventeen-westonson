@@ -41,7 +41,7 @@ h6 {
 --------------------------------------------------------------*/
 
 /* Visually hide page title on front page*/
-.home.page-template-default .entry-header .entry-title {
+.home.twentyseventeen-front-page .entry-header {
 	clip: rect(1px, 1px, 1px, 1px);
 	height: 1px;
 	overflow: hidden;
