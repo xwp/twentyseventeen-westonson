@@ -92,7 +92,7 @@
 		if ( 'block' === $menuToggle.css( 'display' ) ) {
 
 			// Trigger a click on the menu toggle when a nav item is clicked.
-			$navMenuItem.on( 'click touchstart', function() {
+			$navMenuItem.on( 'click touchend', function() {
 				$menuToggle.click();
 			});
 		}
