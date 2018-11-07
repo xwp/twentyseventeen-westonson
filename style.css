@@ -140,6 +140,11 @@ body.page:not(.twentyseventeen-front-page) .entry-title::after {
 	}
 }
 
+.single-featured-image-header img {
+	object-fit: cover;
+	width: 100vw;
+}
+
 .entry-content .alignwide {
 	margin-left  : -130px;
 	margin-right : -130px;
@@ -199,17 +204,6 @@ body.page:not(.twentyseventeen-front-page) .entry-title::after {
 	}
 }
 
-
-/*--------------------------------------------------------------
-## Error Details on the 500.php template
---------------------------------------------------------------*/
-#error-details > iframe {
-	width: 100%;
-}
-#error-details > summary {
-	user-select: none;
-	cursor: pointer;
-}
 
 /*
  * Account for .single-featured-image-header being moved inside .site-content,
@@ -448,6 +442,13 @@ img.circle-image {
 /*--------------------------------------------------------------
 ## Error and Offline pages
 --------------------------------------------------------------*/
+#error-details > iframe {
+	width: 100%;
+}
+#error-details > summary {
+	user-select: none;
+	cursor: pointer;
+}
 
 @media screen and (min-width: 48em) {
 	body.offline .page-header,
