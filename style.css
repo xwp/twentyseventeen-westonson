@@ -451,9 +451,9 @@ img.circle-image {
 }
 
 @media screen and (min-width: 48em) {
-	body.offline .page-header,
-	body.error500 .page-header,
-	body.error404 .page-header {
+	body:not(.has-sidebar):not(.page-one-column).offline .page-header,
+	body:not(.has-sidebar):not(.page-one-column).error500 .page-header,
+	body:not(.has-sidebar):not(.page-one-column).error404 .page-header {
 		float: none;
 		text-align: center;
 		width: 100%;
