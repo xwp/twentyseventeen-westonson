@@ -444,6 +444,16 @@ img.circle-image {
 	left: 100%;
 }
 
+.margin-bottom-large {
+	margin-bottom: 60px;
+	margin-bottom: 3.75rem;
+}
+
+.margin-bottom-small {
+	margin-bottom: 30px;
+	margin-bottom: 1.875rem;
+}
+
 /*--------------------------------------------------------------
 ## Embeds helpers
 --------------------------------------------------------------*/
