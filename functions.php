@@ -182,6 +182,10 @@ add_action( 'wp_enqueue_scripts', function() {
 		$version = md5( file_get_contents( get_stylesheet_directory() . '/assets/js/page-transitions.js' ) );
 		wp_enqueue_script( 'twentyseventeen-page-transitions', get_stylesheet_directory_uri() . '/assets/js/page-transitions.js', array(), $version, false );
 		wp_localize_script( 'twentyseventeen-page-transitions', 'wpPageTransitions', array( 'homeUrl' => get_home_url() ) );
+
+		// Use custom global JS.
+		wp_deregister_script( 'twentyseventeen-global' );
+		wp_enqueue_script( 'twentyseventeen-global', get_stylesheet_directory_uri() . '/assets/js/global.js', array( 'jquery' ), '1.1', true );
 	}
 }, 20 );
 
