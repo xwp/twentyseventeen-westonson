@@ -83,18 +83,6 @@
 				// Remove 'fixed' class if nav is taller than two rows.
 				$navigation.removeClass( navigationFixedClass );
 			}
-		} 
-	}
-
-	function closeMobileMenu() {
-
-		// Make sure we're on a mobile screen.
-		if ( 'block' === $menuToggle.css( 'display' ) ) {
-
-			// Trigger a click on the menu toggle when a nav item is clicked.
-			$navMenuItem.on( 'click touchend', function() {
-				$menuToggle.click();
-			});
 		}
 	}
 
@@ -178,7 +166,6 @@
 		if ( $navigation.length ) {
 			setNavProps();
 			adjustScrollClass();
-			closeMobileMenu();
 		}
 
 		// If 'Scroll Down' arrow in present on page, calculate scroll offset and bind an event handler to the click event.
