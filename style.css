@@ -466,6 +466,13 @@ img.circle-image {
 	text-align: center;
 }
 
+@media screen and (max-width: 48em) {
+	.wp-block-embed.is-type-video iframe {
+		height: auto;
+		margin-bottom: 0;
+	}
+}
+
 .center-tweet .twitter-tweet {
 	margin-left: auto;
 	margin-right: auto;
