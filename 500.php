@@ -19,9 +19,10 @@ get_header(); ?>
 					<h1 class="page-title"><?php esc_html_e( 'Internal Service Error', 'twentyseventeen-westonson' ); ?></h1>
 				</header><!-- .page-header -->
 				<div class="page-content">
-					<p><?php esc_html_e( 'Oops, something went wrong. Please try refreshing the page.', 'twentyseventeen-westonson' ); ?></p>
-
 					<?php
+					if ( function_exists( 'wp_service_worker_error_message_placeholder' ) ) {
+						wp_service_worker_error_message_placeholder();
+					}
 					if ( function_exists( 'wp_service_worker_error_details_template' ) ) {
 						wp_service_worker_error_details_template();
 					}
