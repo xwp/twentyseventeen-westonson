@@ -223,20 +223,25 @@ add_action( 'customize_register', function( WP_Customize_Manager $wp_customize )
 } );
 
 // Make sure that offline and 500 templates' images are precached.
-add_action( 'wp_front_service_worker', function( WP_Service_Worker_Scripts $scripts ) {
-	$scripts->precaching_routes()->register(
-		get_stylesheet_directory_uri() . '/images/500-image.png',
-		array(
-			'revision' => 'v1',
-		)
+if ( function_exists( 'wp_register_service_worker_precaching_route' ) ) {
+	add_action(
+		'wp_front_service_worker',
+		function() {
+			wp_register_service_worker_precaching_route(
+				get_stylesheet_directory_uri() . '/images/500-image.png',
+				array(
+					'revision' => '1.1',
+				)
+			);
+			wp_register_service_worker_precaching_route(
+				get_stylesheet_directory_uri() . '/images/offline-image.png',
+				array(
+					'revision' => '1.1',
+				)
+			);
+		}
 	);
-	$scripts->precaching_routes()->register(
-		get_stylesheet_directory_uri() . '/images/offline-image.png',
-		array(
-			'revision' => 'v1',
-		)
-	);
-} );
+}
 
 // Remove the has-sidebar class from the 500.php and offline.php templates since they do not have the sidebar.
 add_filter( 'body_class', function( $body_classes ) {
