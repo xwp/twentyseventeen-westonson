@@ -357,6 +357,7 @@ img.circle-image {
 }
 
 
+
 /*--------------------------------------------------------------
 ## Style helpers
 --------------------------------------------------------------*/
@@ -489,12 +490,17 @@ img.circle-image {
 	cursor: pointer;
 }
 
+body:not(.has-sidebar):not(.page-one-column).offline .page-header,
+body:not(.has-sidebar):not(.page-one-column).error500 .page-header,
+body:not(.has-sidebar):not(.page-one-column).error404 .page-header {
+	text-align: center;
+}
+
 @media screen and (min-width: 48em) {
 	body:not(.has-sidebar):not(.page-one-column).offline .page-header,
 	body:not(.has-sidebar):not(.page-one-column).error500 .page-header,
 	body:not(.has-sidebar):not(.page-one-column).error404 .page-header {
 		float: none;
-		text-align: center;
 		width: 100%;
 	}
 }
