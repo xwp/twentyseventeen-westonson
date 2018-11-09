@@ -289,7 +289,7 @@ function fonts_url() {
 	 */
 	$karla_rubik = _x( 'on', 'Karla & Rubik fonts: on or off', 'twentyseventeen' );
 
-	if ( 'off' !== $libre_franklin ) {
+	if ( 'off' !== $karla_rubik ) {
 		$font_families = array();
 
 		$font_families[] = 'Karla:400,400i,700|Rubik:700';
