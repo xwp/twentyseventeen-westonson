@@ -275,6 +275,6 @@ if ( function_exists( 'is_amp_endpoint' ) ) {
  * Display custom error message.
  */
 add_filter( 'wp_service_worker_error_messages', function( $messages ) {
-	$messages['error'] = __( 'Oops, something went wrong, Try refreshing the page.', 'twentyseventeen-westonson' );
+	$messages['error'] = __( 'Oops, something went wrong. Try refreshing the page.', 'twentyseventeen-westonson' );
 	return $messages;
 } );
