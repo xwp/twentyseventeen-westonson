@@ -15,13 +15,17 @@ get_header(); ?>
 
 			<section class="error-500 internal-server-error">
 				<header class="page-header">
-					<img class="page-header-image" src="<?php echo esc_url( get_stylesheet_directory_uri() . '/images/500-image.png'); ?>" alt="A bronze compass sitting on a stone surface with a waterfall in the distance'" />
+					<img class="page-header-image"
+						src="<?php echo esc_url( get_stylesheet_directory_uri() . '/images/500-image.png' ); ?>"
+						alt="<?php esc_attr_e( 'A bronze compass sitting on a stone surface with a waterfall in the distance', 'twentyseventeen-westonson' ); ?>"
+					/>
 					<h1 class="page-title"><?php esc_html_e( 'Internal Service Error', 'twentyseventeen-westonson' ); ?></h1>
 				</header><!-- .page-header -->
 				<div class="page-content">
-					<p><?php esc_html_e( 'Oops, something went wrong. Please try refreshing the page.', 'twentyseventeen-westonson' ); ?></p>
-
 					<?php
+					if ( function_exists( 'wp_service_worker_error_message_placeholder' ) ) {
+						wp_service_worker_error_message_placeholder();
+					}
 					if ( function_exists( 'wp_service_worker_error_details_template' ) ) {
 						wp_service_worker_error_details_template();
 					}
