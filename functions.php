@@ -187,6 +187,11 @@ add_action( 'wp_enqueue_scripts', function() {
 		wp_deregister_script( 'twentyseventeen-global' );
 		wp_enqueue_script( 'twentyseventeen-global', get_stylesheet_directory_uri() . '/assets/js/global.js', array( 'jquery' ), '1.1', true );
 	}
+
+	wp_dequeue_style( 'twentyseventeen-fonts' );
+
+	// Add custom fonts, used in the main stylesheet.
+	wp_enqueue_style( 'twentyseventeen-westonson-fonts', fonts_url(), array(), null );
 }, 20 );
 
 add_action( 'customize_register', function( WP_Customize_Manager $wp_customize ) {
@@ -269,4 +274,33 @@ if ( function_exists( 'is_amp_endpoint' ) ) {
 		}
 		return $entry;
 	} );
+}
+
+/**
+ * Register custom fonts.
+ */
+function fonts_url() {
+	$fonts_url = '';
+
+	/*
+	 * Translators: If there are characters in your language that are not
+	 * supported by Libre Franklin, translate this to 'off'. Do not translate
+	 * into your own language.
+	 */
+	$karla_rubik = _x( 'on', 'Karla & Rubik fonts: on or off', 'twentyseventeen' );
+
+	if ( 'off' !== $libre_franklin ) {
+		$font_families = array();
+
+		$font_families[] = 'Karla:400,400i,700|Rubik:700';
+
+		$query_args = array(
+			'family' => urlencode( implode( '|', $font_families ) ),
+			'subset' => urlencode( 'latin,latin-ext' ),
+		);
+
+		$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
+	}
+
+	return esc_url_raw( $fonts_url );
 }
