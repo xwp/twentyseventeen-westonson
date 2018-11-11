@@ -284,8 +284,18 @@ add_filter( 'amp_supportable_templates', function( $supportable_templates ) {
  */
 if ( function_exists( 'is_amp_endpoint' ) ) {
 	add_filter( 'wp_offline_error_precache_entry', function( $entry ) {
-		$supportable_templates = AMP_Theme_Support::get_supportable_templates();
-		if ( ! amp_is_canonical() && ! empty( $supportable_templates['is_offline']['supported'] ) && is_array( $entry ) ) {
+		$supportable_templates    = AMP_Theme_Support::get_supportable_templates();
+		$should_add_amp_query_var = (
+			! amp_is_canonical()
+			&&
+			// Skip if app shell because the app shell inner component would have to be AMP anyway.
+			'amp_app_shell' !== get_theme_mod( 'service_worker_navigation' )
+			&&
+			! empty( $supportable_templates['is_offline']['supported'] )
+			&&
+			is_array( $entry )
+		);
+		if ( $should_add_amp_query_var ) {
 			$entry['url'] = add_query_arg( amp_get_slug(), '', $entry['url'] );
 		}
 		return $entry;
