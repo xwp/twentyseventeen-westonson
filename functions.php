@@ -238,6 +238,50 @@ add_action( 'wp_front_service_worker', function( WP_Service_Worker_Scripts $scri
 	);
 } );
 
+// Add loading indicator.
+add_filter(
+	'amp_app_shell_content_placeholder',
+	function() {
+		ob_start();
+		?>
+		<style>
+		@keyframes loadingAnimation {
+			0%   { opacity:1; }
+			50%  { opacity:0.5; }
+			100% { opacity:1; }
+		}
+		.skeleton {
+			animation: loadingAnimation 1s infinite;
+		}
+		.skeleton-desktop {
+			display: none;
+		}
+		@media screen and ( min-width: 48em ) {
+			.skeleton-mobile {
+				display: none;
+			}
+			.skeleton-desktop {
+				display: block;
+			}
+		}
+		</style>
+		<div id="primary" class="content-area">
+			<main id="main" class="site-main" role="main">
+				<div class="wrap">
+					<div class="skeleton skeleton-desktop">
+						<?php echo file_get_contents( get_stylesheet_directory() . '/images/skeleton-desktop.svg' ); ?>
+					</div>
+					<div class="skeleton skeleton-mobile">
+						<?php echo file_get_contents( get_stylesheet_directory() . '/images/skeleton-mobile.svg' ); ?>
+					</div>
+				</div>
+			</main>
+		</div>
+		<?php
+		return ob_get_clean();
+	}
+);
+
 // Remove the has-sidebar class from the 500.php and offline.php templates since they do not have the sidebar.
 add_filter( 'body_class', function( $body_classes ) {
 	if ( ( function_exists( 'is_500' ) && is_500() ) || ( function_exists( 'is_offline' ) && is_offline() ) ) {
@@ -284,8 +328,18 @@ add_filter( 'amp_supportable_templates', function( $supportable_templates ) {
  */
 if ( function_exists( 'is_amp_endpoint' ) ) {
 	add_filter( 'wp_offline_error_precache_entry', function( $entry ) {
-		$supportable_templates = AMP_Theme_Support::get_supportable_templates();
-		if ( ! amp_is_canonical() && ! empty( $supportable_templates['is_offline']['supported'] ) && is_array( $entry ) ) {
+		$supportable_templates    = AMP_Theme_Support::get_supportable_templates();
+		$should_add_amp_query_var = (
+			! amp_is_canonical()
+			&&
+			// Skip if app shell because the app shell inner component would have to be AMP anyway.
+			'amp_app_shell' !== get_theme_mod( 'service_worker_navigation' )
+			&&
+			! empty( $supportable_templates['is_offline']['supported'] )
+			&&
+			is_array( $entry )
+		);
+		if ( $should_add_amp_query_var ) {
 			$entry['url'] = add_query_arg( amp_get_slug(), '', $entry['url'] );
 		}
 		return $entry;

@@ -214,7 +214,7 @@
 			setTimeout( adjustScrollClass, 500 );
 		});
 
-		$( window ).on( 'wp-amp-app-shell-load', function() {
+		$( window ).on( 'wp-amp-app-shell-ready', function() {
 			setNavProps();
 			setTimeout( adjustScrollClass, 500 );
 		});
